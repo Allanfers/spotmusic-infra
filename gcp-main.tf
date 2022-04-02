@@ -9,7 +9,7 @@ resource "google_artifact_registry_repository" "spotmusic-grupo09-artf-repo" {
 
 resource "google_sql_database_instance" "spotmusic-grupo09-cloudsql" {
   name             = "spotmusic-grupo09-cloudsql"
-  database_version = "POSTGRES_11"
+  database_version = "MYSQL_8_0"
   region           = "us-central1"
 
   settings {

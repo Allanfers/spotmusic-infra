@@ -7,17 +7,14 @@ resource "google_artifact_registry_repository" "spotmusic-grupo09-artf-repo" {
   format = "DOCKER"
 }
 
-module "cloudsql-mysql" {
-  source = "git::ssh://git@github.com:google-terraform-modules/terraform-google-cloudsql.git"
+resource "google_sql_database_instance" "spotmusic-grupo09-cloudsql" {
+  name             = "spotmusic-grupo09-cloudsql"
+  database_version = "POSTGRES_11"
+  region           = "us-central1"
 
-  general = {
-    name       = "mydatabase"
-    env        = "dev"
-    region     = "us-west1"
-    db_version = "MYSQL_5_6"
-  }
-
-  instance = {
-    zone = "b"
+  settings {
+    # Second-generation instance tiers are based on the machine
+    # type. See argument reference below.
+    tier = "db-f1-micro"
   }
 }

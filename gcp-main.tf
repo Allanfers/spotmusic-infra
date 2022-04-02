@@ -7,8 +7,8 @@ resource "google_artifact_registry_repository" "spotmusic-grupo09-artf-repo" {
   format = "DOCKER"
 }
 
-resource "google_sql_database_instance" "spotmusic-grupo09-cloudsql" {
-  name             = "spotmusic-grupo09-cloudsql"
+resource "google_sql_database_instance" "spotmusic-grupo09-cloudsql-tf" {
+  name             = "spotmusic-grupo09-cloudsql-tf"
   database_version = "MYSQL_8_0"
   region           = "us-central1"
 

@@ -21,8 +21,3 @@ resource "google_sql_database_instance" "spotmusic-grupo09-cloudsql" {
   deletion_protection  = "false"
 
 }
-
-resource "google_sql_database" "spotmusic-grupo09-playlist_database" {
-  name     = "my-database"
-  instance = google_sql_database_instance.spotmusic-grupo09-cloudsql.spotmusic-grupo09-cloudsql
-}
